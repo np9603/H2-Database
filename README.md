@@ -67,6 +67,7 @@ needs to be added to the org.h2.api package.
 
 ![image](https://user-images.githubusercontent.com/46695666/120853539-d282bd00-c549-11eb-9e51-2dbd3bd1b1bd.png)
 ![image](https://user-images.githubusercontent.com/46695666/120853588-e9c1aa80-c549-11eb-966d-240fa49bb80a.png)
+![image](https://user-images.githubusercontent.com/46695666/120854268-e8dd4880-c54a-11eb-93bf-0ece64cb6ca3.png)
 
 
 An arraylist "numbers" is used to store the values of a column. In the implementation of add function we are finding minimum and maximum value of a column. Each value is added to the arraylist and sum is incremented by value. The purpose of storing the value in arraylist is to get the total number of records. This will be used for calculating average. In the implementation of getResult function the average value is calculated using the sum and size of the arraylist. Each value in the arraylist is compared with the calculated average. In LessThanAverage aggregate function count will be incremented if the value is less than or equal to the calculated average. In GreaterThanAverage aggregate function count will be incremented if the value is less than or equal to the calculated average.
