@@ -40,4 +40,33 @@ ValuePhone.java - This class overrides the methods from the Value class which is
 _messages_en.prop - Added a line in the original error code file “90150=Invalid US phone number or phone number format “ to display the custom error message for invalid phone numbers.
 
 
-Task 2 - Implement an enhanced feature to H2 database in terms of query processing and optimization. Such features can be adding a new query operator (e.g., new aggregate function, approximate search) and adding more join operations.
+**Task 2 - Implement an enhanced feature to H2 database in terms of query processing and optimization. Such features can be adding a new query operator (e.g., new aggregate function, approximate search) and adding more join operations.**
+
+For implementing an enhanced feature for H2 Database in terms of query processing and optimization, I decided to implement a new aggregate function called GreaterThanAverage and LessThanAverage. Aggregate functions are functions that combines multiple records and then perform the function and return a single value as result.
+
+● GreaterThanAverage is an aggregate function that calculates the average of all the values of a column in the table and returns the count of records that have a value greater than the average. The initial input is given in integer data type format and the aggregate function returns the result in integer format. 
+
+● LessThanAverage is an aggregate function that calculates the average of all the values of a column in the table and returns the count of records that have a value less than and equal to the average. The initial input is given in integer data type format and the aggregate function returns the result in integer format.
+
+For performing the same operation in H2, we have to use a subquery.
+
+GreaterThanAverage
+Example: Select count(*) from employee where salary > (Select avg(salary) from employee);
+
+Using implemented GreaterThanAverage aggregate function:
+Select GT_AVG(salary) from employee;
+
+LessThanAverage
+Example: Select count(*) from employee where salary <= (Select avg(salary) from employee);
+
+Using implemented LessThanAverage aggregate function:
+Select LT_AVG(salary) from employee;
+
+H2 allows users to create their own aggregate functions by implementing the minimal required AggregateFunction interface. To use this feature, the GreaterThanAverage.java and LessThanAverage.java file should implement all the abstract methods defined in the AggregateFunction interface (add, getResult , getType , init methods). The created java file
+needs to be added to the org.h2.api package.
+
+![image](https://user-images.githubusercontent.com/46695666/120853539-d282bd00-c549-11eb-9e51-2dbd3bd1b1bd.png)
+![image](https://user-images.githubusercontent.com/46695666/120853588-e9c1aa80-c549-11eb-966d-240fa49bb80a.png)
+
+
+An arraylist "numbers" is used to store the values of a column. In the implementation of add function we are finding minimum and maximum value of a column. Each value is added to the arraylist and sum is incremented by value. The purpose of storing the value in arraylist is to get the total number of records. This will be used for calculating average. In the implementation of getResult function the average value is calculated using the sum and size of the arraylist. Each value in the arraylist is compared with the calculated average. In LessThanAverage aggregate function count will be incremented if the value is less than or equal to the calculated average. In GreaterThanAverage aggregate function count will be incremented if the value is less than or equal to the calculated average.
