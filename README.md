@@ -181,3 +181,11 @@ b. Greater Than Average
 ![image](https://user-images.githubusercontent.com/46695666/120868482-2b5e4f80-c562-11eb-9e4a-c8f7d9c06e19.png)
 
 ![image](https://user-images.githubusercontent.com/46695666/120868454-1a154300-c562-11eb-8f8b-68656394273f.png)
+
+
+# REFERENCES:
+1. https://github.com/h2database/h2database
+2. http://www.h2database.com/html/advanced.html#custom_data_types_handler_api
+3. https://github.com/h2database/h2database/blob/master/h2/src/main/org/h2/api/AggregateFunction.java
+4. http://h2-database.66688.n3.nabble.com/user-defined-aggregate-function-FIRST-and-LAST-td4031866.html
+
