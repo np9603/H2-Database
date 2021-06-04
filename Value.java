@@ -257,7 +257,9 @@ public abstract class Value extends VersionedValue {
      * The value type for TIME WITH TIME ZONE values.
      */
     public static final int TIME_TZ = 41;
-
+    /**
+     * The value type for PHONE values.
+     */
     public static final int PHONE = 42;
     /**
      * The number of value types.
