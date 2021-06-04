@@ -32,6 +32,12 @@ SysProperties.java - The CustomPhoneDataTypeHandler class name that is used must
 
 Value.java - This is the base class file which contains all the data types, conversion methods and comparison methods supported by the H2 database. For adding the custom data type Phone, the following code is used.
 
+![image](https://user-images.githubusercontent.com/46695666/120841505-947d9d00-c539-11eb-9c9b-5cd73c74eea4.png)
+![image](https://user-images.githubusercontent.com/46695666/120841744-e32b3700-c539-11eb-8d47-caf401fc52ae.png)
+
+ValuePhone.java - This class overrides the methods from the Value class which is the base class for all data types.
+
+_messages_en.prop - Added a line in the original error code file “90150=Invalid US phone number or phone number format “ to display the custom error message for invalid phone numbers.
 
 
 Task 2 - Implement an enhanced feature to H2 database in terms of query processing and optimization. Such features can be adding a new query operator (e.g., new aggregate function, approximate search) and adding more join operations.
