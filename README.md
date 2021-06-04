@@ -51,16 +51,20 @@ For implementing an enhanced feature for H2 Database in terms of query processin
 
 For performing the same operation in H2, we have to use a subquery.
 
-GreaterThanAverage
+**GreaterThanAverage**
+
 Example: Select count(*) from employee where salary > (Select avg(salary) from employee);
 
 Using implemented GreaterThanAverage aggregate function:
+
 Select GT_AVG(salary) from employee;
 
-LessThanAverage
+**LessThanAverage**
+
 Example: Select count(*) from employee where salary <= (Select avg(salary) from employee);
 
 Using implemented LessThanAverage aggregate function:
+
 Select LT_AVG(salary) from employee;
 
 H2 allows users to create their own aggregate functions by implementing the minimal required AggregateFunction interface. To use this feature, the GreaterThanAverage.java and LessThanAverage.java file should implement all the abstract methods defined in the AggregateFunction interface (add, getResult , getType , init methods). The created java file
@@ -76,6 +80,7 @@ needs to be added to the org.h2.api package. An arraylist "numbers" is used to s
 # Demo - Task 1
 
 1. Creating a table with custom Phone Number data type
+
 Create a table STUDENT with attributes ID INT primary key, name VARCHAR(15) and phoneNumber PHONE.
 
 ![image](https://user-images.githubusercontent.com/46695666/120867107-3f548200-c55f-11eb-915b-5e60b22d88f8.png)
@@ -93,6 +98,7 @@ Create a table STUDENT with attributes ID INT primary key, name VARCHAR(15) and 
 ![image](https://user-images.githubusercontent.com/46695666/120867192-6dd25d00-c55f-11eb-9d37-eb15435cb3e5.png)
 
 5. Some examples of invalid inputs
+
 a. Input of length less than 10 [no separators used “ ( “ , “ ) ” , “ - ” ]
 
 ![image](https://user-images.githubusercontent.com/46695666/120867236-85114a80-c55f-11eb-860c-36202c9db7e3.png)
@@ -136,32 +142,42 @@ Create aggregate <function_name> for “org.h2.api.<file_name>”;
 
 Create aggregate GT_AVG for “org.h2.api.GreaterThanAverage”;
 
-
+![image](https://user-images.githubusercontent.com/46695666/120868577-58126700-c562-11eb-8938-ac2f2f14a47a.png)
 
 Create aggregate LT_AVG for “org.h2.api.LessThanAverage”;
+
+![image](https://user-images.githubusercontent.com/46695666/120868572-55177680-c562-11eb-8838-831ed79a8681.png)
 
 
 1. Creating a table employee
 Create a table employee with attributes ID INT, name VARCHAR2(10) and salary INT.
 
+![image](https://user-images.githubusercontent.com/46695666/120868565-5052c280-c562-11eb-9990-7e407f6aa153.png)
 
 2. Displaying the column information for the created table
 
+![image](https://user-images.githubusercontent.com/46695666/120868557-4cbf3b80-c562-11eb-9c2d-9eb9f7833a5a.png)
 
 3. Inserting new records in the user info table
 
+![image](https://user-images.githubusercontent.com/46695666/120868543-47fa8780-c562-11eb-97c1-b3078c056c7e.png)
 
 4. Displaying records of the user info table
 
+![image](https://user-images.githubusercontent.com/46695666/120868538-4335d380-c562-11eb-8218-0e9b6b0debcf.png)
 
+![image](https://user-images.githubusercontent.com/46695666/120868531-3f09b600-c562-11eb-9d47-a1552f4706db.png)
 
 5. Displaying the aggregate function results
 
 a. Less Than Average
 
+![image](https://user-images.githubusercontent.com/46695666/120868511-344f2100-c562-11eb-8597-d5881811dc4a.png)
 
+![image](https://user-images.githubusercontent.com/46695666/120868500-30230380-c562-11eb-8e62-74441705f1ae.png)
 
 b. Greater Than Average
 
-![image](https://user-images.githubusercontent.com/46695666/120868035-1cc36880-c561-11eb-8325-4bd746dd0992.png)
+![image](https://user-images.githubusercontent.com/46695666/120868482-2b5e4f80-c562-11eb-9e4a-c8f7d9c06e19.png)
 
+![image](https://user-images.githubusercontent.com/46695666/120868454-1a154300-c562-11eb-8f8b-68656394273f.png)
