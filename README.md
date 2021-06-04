@@ -73,4 +73,95 @@ needs to be added to the org.h2.api package. An arraylist "numbers" is used to s
 ![image](https://user-images.githubusercontent.com/46695666/120854268-e8dd4880-c54a-11eb-93bf-0ece64cb6ca3.png)
 
 
+# Demo - Task 1
+
+1. Creating a table with custom Phone Number data type
+Create a table STUDENT with attributes ID INT primary key, name VARCHAR(15) and phoneNumber PHONE.
+
+![image](https://user-images.githubusercontent.com/46695666/120867107-3f548200-c55f-11eb-915b-5e60b22d88f8.png)
+
+2. Displaying the column information for the created table
+
+![image](https://user-images.githubusercontent.com/46695666/120867154-598e6000-c55f-11eb-8579-d5a726293811.png)
+
+3. Inserting new records in the user info table
+
+![image](https://user-images.githubusercontent.com/46695666/120867174-64e18b80-c55f-11eb-85af-942a0f943b34.png)
+
+4. Displaying records of the user info table
+
+![image](https://user-images.githubusercontent.com/46695666/120867192-6dd25d00-c55f-11eb-9d37-eb15435cb3e5.png)
+
+5. Some examples of invalid inputs
+a. Input of length less than 10 [no separators used “ ( “ , “ ) ” , “ - ” ]
+
+![image](https://user-images.githubusercontent.com/46695666/120867236-85114a80-c55f-11eb-860c-36202c9db7e3.png)
+
+b. Input of length greater than 13 [separators used “ ( “ , “ ) ” , “ - ” ]
+
+![image](https://user-images.githubusercontent.com/46695666/120867247-8a6e9500-c55f-11eb-9b82-fed403af2e18.png)
+
+c. Also handles cases when inserting multiple records with valid and invalid records
+
+![image](https://user-images.githubusercontent.com/46695666/120867265-9195a300-c55f-11eb-8ab3-cc628be94cfa.png)
+
+d. Input of length 11
+
+![image](https://user-images.githubusercontent.com/46695666/120867279-98241a80-c55f-11eb-9439-f6e873777ca7.png)
+
+e. Input containing characters
+
+![image](https://user-images.githubusercontent.com/46695666/120867298-9fe3bf00-c55f-11eb-874e-ae7e979d989c.png)
+
+f. Input containing special characters except “ ( “ , “ ) ” , “ - ”
+
+![image](https://user-images.githubusercontent.com/46695666/120867308-a6723680-c55f-11eb-8667-3c271cfbb51f.png)
+
+g. Input containing special characters “ ( “ , “ ) ” , “ - ” at wrong places
+
+![image](https://user-images.githubusercontent.com/46695666/120867318-ae31db00-c55f-11eb-97ae-33d4b079d404.png)
+
+h. First digit 1
+
+![image](https://user-images.githubusercontent.com/46695666/120867333-b4c05280-c55f-11eb-84b1-f582d0e69cd4.png)
+
+6. Deleting entire table
+
+![image](https://user-images.githubusercontent.com/46695666/120867359-c0137e00-c55f-11eb-945b-e23bd0281be2.png)
+
+# Demo - Task 2
+
+For adding the aggregate function in H2 database, we need to execute the following command in the H2 interface.
+Create aggregate <function_name> for “org.h2.api.<file_name>”;
+
+Create aggregate GT_AVG for “org.h2.api.GreaterThanAverage”;
+
+
+
+Create aggregate LT_AVG for “org.h2.api.LessThanAverage”;
+
+
+1. Creating a table employee
+Create a table employee with attributes ID INT, name VARCHAR2(10) and salary INT.
+
+
+2. Displaying the column information for the created table
+
+
+3. Inserting new records in the user info table
+
+
+4. Displaying records of the user info table
+
+
+
+5. Displaying the aggregate function results
+
+a. Less Than Average
+
+
+
+b. Greater Than Average
+
+![image](https://user-images.githubusercontent.com/46695666/120868035-1cc36880-c561-11eb-8325-4bd746dd0992.png)
 
